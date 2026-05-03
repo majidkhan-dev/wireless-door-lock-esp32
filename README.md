@@ -39,20 +39,19 @@ Both nodes communicate directly using the ESP-NOW protocol, enabling fast and re
 ```bash
 git clone https://github.com/majidkhan-dev/wireless-door-lock-esp32
 cd wireless-door-lock-esp32
-Get the MAC address of the lock node ESP32 and update it in the controller firmware
-Flash the lock node firmware
+Get the MAC address of the outside node ESP32 and update it in the inside node firmware
+Flash the outside node firmware
 cd outside-node
 idf.py -p COMXX build flash monitor
-Flash the controller firmware
+Flash the inside node firmware
 cd inside-node
 idf.py -p COMXX build flash monitor
 How It Works
 User triggers lock/unlock on the inside node
-Controller sends an ESP-NOW packet directly to the outside node MAC address
+Inside node sends an ESP-NOW packet directly to the outside node MAC address
 Outside node receives the packet and drives the IRLZ34N MOSFET gate HIGH/LOW
 MOSFET switches the solenoid coil — lock opens or closes
 Status is shown on the 2×16 LCD and confirmed with a buzzer beep
 The 1N5819 flyback diode suppresses the voltage spike when the solenoid de-energises
-
-### License
+License
 MIT — feel free to use, modify, and distribute.
