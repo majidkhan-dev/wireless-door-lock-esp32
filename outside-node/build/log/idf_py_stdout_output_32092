@@ -1,0 +1,68 @@
+[1/5] cmd.exe /C "cd /D C:\Users\MAJID\Desktop\Majid\embedded\Muqaddas\outside-node\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/MAJID/Desktop/Majid/embedded/Muqaddas/outside-node/build/partition_table/partition-table.bin C:/Users/MAJID/Desktop/Majid/embedded/Muqaddas/outside-node/build/outside-node.bin"
+outside-node.bin binary size 0xb9e80 bytes. Smallest app partition is 0x100000 bytes. 0x46180 bytes (27%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\MAJID\Desktop\Majid\embedded\Muqaddas\outside-node\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Users/MAJID/Desktop/Majid/embedded/Muqaddas/outside-node/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6880 bytes. 0x780 bytes (7%) free.
+[2/3] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.3.1\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.3.1 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.3_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py/esptool/esptool.py;--chip;esp32 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WOesptool.py --chip esp32 -p COM17 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 outside-node.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.11.0
+Serial port COM17
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 84:1f:e8:07:e1:ec
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000c9fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26752 bytes to 16360...
+Writing at 0x00001000... (100 %)
+Wrote 26752 bytes (16360 compressed) at 0x00001000 in 0.5 seconds (effective 415.8 kbit/s)...
+Hash of data verified.
+Compressed 761472 bytes to 484601...
+Writing at 0x00010000... (3 %)
+Writing at 0x0001c509... (6 %)
+Writing at 0x000228a4... (10 %)
+Writing at 0x00027f7c... (13 %)
+Writing at 0x00031895... (16 %)
+Writing at 0x0003755e... (20 %)
+Writing at 0x0003d337... (23 %)
+Writing at 0x000430ae... (26 %)
+Writing at 0x00048bcb... (30 %)
+Writing at 0x0004f0ff... (33 %)
+Writing at 0x0005434f... (36 %)
+Writing at 0x000596a4... (40 %)
+Writing at 0x0005ec4b... (43 %)
+Writing at 0x00063fec... (46 %)
+Writing at 0x0006966e... (50 %)
+Writing at 0x0006ee65... (53 %)
+Writing at 0x00074d48... (56 %)
+Writing at 0x0007a52a... (60 %)
+Writing at 0x000800ae... (63 %)
+Writing at 0x00085d75... (66 %)
+Writing at 0x0008b71c... (70 %)
+Writing at 0x00091472... (73 %)
+Writing at 0x00096d73... (76 %)
+Writing at 0x0009c7d7... (80 %)
+Writing at 0x000a8014... (83 %)
+Writing at 0x000ae0aa... (86 %)
+Writing at 0x000b586c... (90 %)
+Writing at 0x000bb320... (93 %)
+Writing at 0x000c1711... (96 %)
+Writing at 0x000c69f8... (100 %)
+Wrote 761472 bytes (484601 compressed) at 0x00010000 in 11.0 seconds (effective 554.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 1232.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+RKING_DIRECTORY=C:/Users/MAJID/Desktop/Majid/embedded/Muqaddas/outside-node/build -P C:/Espressif/frameworks/esp-idf-v5.3.1/components/esptool_py/run_serial_tool.cmake"
