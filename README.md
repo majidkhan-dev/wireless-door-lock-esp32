@@ -53,5 +53,6 @@ Outside node receives the packet and drives the IRLZ34N MOSFET gate HIGH/LOW
 MOSFET switches the solenoid coil — lock opens or closes
 Status is shown on the 2×16 LCD and confirmed with a buzzer beep
 The 1N5819 flyback diode suppresses the voltage spike when the solenoid de-energises
-License
+
+### License
 MIT — feel free to use, modify, and distribute.
