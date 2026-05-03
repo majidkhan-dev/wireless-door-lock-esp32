@@ -43,7 +43,6 @@ Both nodes communicate directly using the ESP-NOW protocol, enabling fast and re
 ## Getting Started
 
 ### Prerequisites
-
 - ESP-IDF v5.x installed
 - VS Code with the ESP-IDF extension
 - Two ESP32 development boards
@@ -51,25 +50,38 @@ Both nodes communicate directly using the ESP-NOW protocol, enabling fast and re
 ### Setup
 
 1. Clone the repository
-
 ```bash
 git clone https://github.com/majidkhan-dev/wireless-door-lock-esp32
 cd wireless-door-lock-esp32
-Get the MAC address of the lock node ESP32 and update it in the controller firmware
+```
+
+2. Get the MAC address of the **lock node** ESP32 and update it in the controller firmware
+```c
 // controller/main/main.c
 static uint8_t lock_node_mac[] = {0xXX, 0xXX, 0xXX, 0xXX, 0xXX, 0xXX};
-Flash the lock node firmware
+```
+
+3. Flash the **lock node** firmware
+```bash
 cd lock-node
 idf.py build flash monitor
-Flash the controller firmware
+```
+
+4. Flash the **controller** firmware
+```bash
 cd controller
 idf.py build flash monitor
-How It Works
-User triggers lock/unlock on the controller node
-Controller sends an ESP-NOW packet directly to the lock node MAC address
-Lock node receives the packet and drives the IRLZ34N MOSFET gate HIGH/LOW
-MOSFET switches the solenoid coil — lock opens or closes
-Status is shown on the 2×16 LCD and confirmed with a buzzer beep
-The 1N5819 flyback diode suppresses the voltage spike when the solenoid de-energises
-License
+```
+
+## How It Works
+
+1. User triggers lock/unlock on the controller node
+2. Controller sends an ESP-NOW packet directly to the lock node MAC address
+3. Lock node receives the packet and drives the IRLZ34N MOSFET gate HIGH/LOW
+4. MOSFET switches the solenoid coil — lock opens or closes
+5. Status is shown on the 2×16 LCD and confirmed with a buzzer beep
+6. The 1N5819 flyback diode suppresses the voltage spike when the solenoid de-energises
+
+## License
+
 MIT — feel free to use, modify, and distribute.
